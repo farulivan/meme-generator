@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Nav() {
     return (
         <nav className="flex justify-between items-center bg-gradient-to-r from-purple-800 to-purple-600 text-white py-6 px-9">
