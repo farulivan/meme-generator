@@ -10,6 +10,17 @@ module.exports = {
         karla: ['Karla', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         anton: ['Anton', 'sans-serif']
+      },
+      dropShadow: {
+        'outline':
+        ['0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000',
+        '0 0 1px #000']
       }
     },
   },

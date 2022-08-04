@@ -25,6 +25,17 @@ export default function Meme() {
             randomImage: imageUrl
         }))
     }
+
+    //function for getting text input
+    function handleChange(event) {
+        //destructuring the object (ES6)
+        const {name, value} = event.target
+        //change the value of state with something that type in input form
+        setMeme(emptyValue => ({
+            ...emptyValue,
+            [name]: value
+        }))
+    }
     
     // making state (OLD syntax)
     // const [memePic, randomMeme] = React.useState('');
@@ -48,13 +59,18 @@ export default function Meme() {
                     <input 
                     type="text" 
                     placeholder="Shut up" 
-                    name="first-element" 
+                    name="topText"
+                    onChange={handleChange}
+                    value={meme.topText} 
                     className="w-full block px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
                     />
                     <input 
                     type="text" 
                     placeholder="and take my money" 
-                    name="second-element" className="w-full block px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
+                    name="bottomText"
+                    onChange={handleChange}
+                    value={meme.bottomText}
+                    className="w-full block px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
                     />
                 </div>
                 <button className="w-full mt-4 h-10 bg-gradient-to-r from-purple-800 to-purple-600 text-white font-karla font-bold rounded-md" onClick={getMemeImages}>
@@ -63,8 +79,8 @@ export default function Meme() {
             </div>
             <div className="relative">
                 <img className="mt-9 w-full object-contain text-center px-8" src={meme.randomImage} />
-                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-lg top-0">First text will be here</h2>
-                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-lg bottom-0">Second Text will be here</h2>
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline top-0">{meme.topText}</h2>
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline bottom-0">{meme.bottomText}</h2>
             </div>
         </main>
     )
