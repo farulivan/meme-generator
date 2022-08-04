@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         karla: ['Karla', 'sans-serif'],
-        inter: ['Inter', 'sans-serif']
+        inter: ['Inter', 'sans-serif'],
+        anton: ['Anton', 'sans-serif']
       }
     },
   },

@@ -12,7 +12,7 @@ export default function Meme() {
         randomImage: 'https://i.imgflip.com/30b1gx.jpg'
     });
 
-    //function for getting mouse clicked
+    //function for getting mouse clicked on button
     function getMemeImages() {
         //capture memes data as an array
         const memesArray = allMemeImages.data.memes;
@@ -61,9 +61,11 @@ export default function Meme() {
                     Get a new meme image <span className="font-sans">🖼</span>
                 </button>
             </div>
-            <img className="mt-9 w-full object-contain text-center px-8"
-            src={meme.randomImage}>
-            </img>
+            <div className="relative">
+                <img className="mt-9 w-full object-contain text-center px-8" src={meme.randomImage} />
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-lg top-0">First text will be here</h2>
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-lg bottom-0">Second Text will be here</h2>
+            </div>
         </main>
     )
 }
