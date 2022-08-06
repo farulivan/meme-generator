@@ -3,7 +3,7 @@ import memesData from "../memesData";
 
 export default function Meme() {
     //randomize image state
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+    const [allMemes, setAllMemes] = React.useState(memesData)
     
     //set final image state
     const [meme, setMeme] = React.useState({
@@ -15,7 +15,7 @@ export default function Meme() {
     //function for getting mouse clicked on button
     function getMemeImages() {
         //capture memes data as an array
-        const memesArray = allMemeImages.data.memes;
+        const memesArray = allMemes.data.memes;
         // make a random number according tu memes length
         const randomNumber = Math.floor(Math.random() * memesArray.length);
         // put a random number to index of memesArray
