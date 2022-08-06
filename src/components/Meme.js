@@ -58,14 +58,14 @@ export default function Meme() {
     return (
         <main className="m-9">
             <div className="form">
-                <div className="flex gap-6">
+                <div className="flex-column md:flex md:gap-6">
                     <input 
                     type="text" 
                     placeholder="Shut up" 
                     name="topText"
                     onChange={handleChange}
                     value={meme.topText} 
-                    className="w-full block px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
+                    className="w-full px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
                     />
                     <input 
                     type="text" 
@@ -73,7 +73,7 @@ export default function Meme() {
                     name="bottomText"
                     onChange={handleChange}
                     value={meme.bottomText}
-                    className="w-full block px-3 py-2 font-semibold placeholder-gray-400 rounded-md border"
+                    className="w-full px-3 py-2 font-semibold placeholder-gray-400 rounded-md border mt-4 md:mt-0"
                     />
                 </div>
                 <button className="w-full mt-4 h-10 bg-gradient-to-r from-purple-800 to-purple-600 text-white font-karla font-bold rounded-md" onClick={getMemeImages}>
@@ -81,9 +81,9 @@ export default function Meme() {
                 </button>
             </div>
             <div className="relative">
-                <img className="mt-9 w-full object-contain text-center px-8" src={meme.randomImage} />
-                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline top-0">{meme.topText}</h2>
-                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline bottom-0">{meme.bottomText}</h2>
+                <img className="mt-9 w-full object-contain text-center" src={meme.randomImage} />
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-xl md:text-5xl lg:text-7xl text-white uppercase drop-shadow-outline bottom-0">{meme.bottomText}</h2>
+                <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-xl md:text-5xl lg:text-7xl text-white uppercase drop-shadow-outline top-0">{meme.topText}</h2>
             </div>
             <div className="inline">
                 <p className="mt-9 mx-auto w-fit bg-purple-200 rounded-md drop-shadow-md p-4 text-gray-600 text-sm">To save the Meme, please just use a screenshot and crop. The 'Save Image' feature is under development process.</p>
