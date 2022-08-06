@@ -85,8 +85,8 @@ export default function Meme() {
                 <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline top-0">{meme.topText}</h2>
                 <h2 className="absolute w-4/5 text-center left-1/2 -translate-x-1/2 my-4 px-1 font-anton text-7xl text-white uppercase drop-shadow-outline bottom-0">{meme.bottomText}</h2>
             </div>
-            <div className="mt-9 mx-20 bg-purple-200 rounded-md drop-shadow-md">
-                <p className="p-4 text-gray-600 text-sm">To save the Meme, please just use a screenshot and crop. The 'Save Image' feature is under development process.</p>
+            <div className="inline">
+                <p className="mt-9 mx-auto w-fit bg-purple-200 rounded-md drop-shadow-md p-4 text-gray-600 text-sm">To save the Meme, please just use a screenshot and crop. The 'Save Image' feature is under development process.</p>
             </div>
         </main>
     )
