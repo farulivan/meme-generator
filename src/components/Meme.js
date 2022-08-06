@@ -1,25 +1,28 @@
 import React from "react";
-import memesData from "../memesData";
 
 export default function Meme() {
     //randomize image state
-    const [allMemes, setAllMemes] = React.useState(memesData)
+    const [allMemes, setAllMemes] = React.useState([])
     
     //set final image state
     const [meme, setMeme] = React.useState({
         topText: '',
         bottomText: '',
-        randomImage: 'https://i.imgflip.com/30b1gx.jpg'
+        randomImage: 'http://i.imgflip.com/1bij.jpg'
     });
+
+    React.useEffect(function() {
+        fetch(`https://api.imgflip.com/get_memes`)
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
 
     //function for getting mouse clicked on button
     function getMemeImages() {
-        //capture memes data as an array
-        const memesArray = allMemes.data.memes;
         // make a random number according tu memes length
-        const randomNumber = Math.floor(Math.random() * memesArray.length);
-        // put a random number to index of memesArray
-        const imageUrl = memesArray[randomNumber].url;
+        const randomNumber = Math.floor(Math.random() * allMemes.length);
+        // put a random number to index of allMemes
+        const imageUrl = allMemes[randomNumber].url;
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: imageUrl
